@@ -211,8 +211,27 @@ animation: bounce 2s infinite ;
 
 .btn--theme {
     background: #0062b9;
-    color: #fff
+    color: #fff;
+    animation: shake 1.9s infinite;
 }
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-3px);
+    }
+    50% {
+      transform: translateX(3px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
 .btn--theme-inv {
     color: #0062b9;
