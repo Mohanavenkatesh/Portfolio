@@ -1,21 +1,21 @@
 
-// For Download Resume
-document.getElementById("download-btn").addEventListener("click", function () {
-    // URL of the resume file
-    const fileUrl = "./assets/Normal Resume.pdf"; // Replace with your actual file path or URL
-    const fileName = "Mohanavenkatesh_Resume.pdf"; // Desired file name
+// // For Download Resume
+// document.getElementById("download-btn").addEventListener("click", function () {
+//     // URL of the resume file
+//     const fileUrl = "./assets/Normal Resume.pdf"; // Replace with your actual file path or URL
+//     const fileName = "Mohanavenkatesh_Resume.pdf"; // Desired file name
 
-    // Create a temporary link element
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = fileName;
+//     // Create a temporary link element
+//     const link = document.createElement("a");
+//     link.href = fileUrl;
+//     link.download = fileName;
 
-    // Programmatically click the link
-    link.click();
+//     // Programmatically click the link
+//     link.click();
 
-    // Clean up
-    link.remove();
-});
+//     // Clean up
+//     link.remove();
+// });
 
 // Email JS
 
