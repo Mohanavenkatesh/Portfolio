@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link href="./src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-rose-100">
+<body class="bg-green-100">
 
-    <div class="container mx-auto px-4 list-none font-mono">
+    <div class="container mx-auto px-4 list-none ">
 
         <!-- nav -->
         <div class="flex justify-between p-5">
-            <div class="flex gap-5">
-                <li><a href="#main">Mohanavenkatesh</a></li>
+            <div class="flex gap-5 ">
+                <a href="#main">Mohanavenkatesh</a>
                 <div class="flex gap-5">
-                    <li><a href="#main">Home</a></li>
-                    <li><a href="#aboutme">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <a href="#main"
+                        class="border-b-4 border-transparent hover:border-green-500 transition duration-300"> Home
+                        <button class="sound-btn" data-sound="https://www.fesliyanstudios.com/play-mp3/2"></button></a>
+                    <a href="#aboutme"
+                        class=" border-b-4 border-transparent hover:border-green-500 transition duration-300">About
+                        Me<button class="sound-btn"
+                            data-sound="https://www.fesliyanstudios.com/play-mp3/2"></button></a>
+                    <a href="#projects"
+                        class=" border-b-4 border-transparent hover:border-green-500 transition duration-300">Projects<button
+                            class="sound-btn" data-sound="https://www.fesliyanstudios.com/play-mp3/2"></button></a>
+                    <a href="#contact"
+                        class=" border-b-4 border-transparent hover:border-green-500 transition duration-300">Contact<button
+                            class="sound-btn" data-sound="https://www.fesliyanstudios.com/play-mp3/2"></button></a>
                 </div>
             </div>
 
@@ -32,13 +41,17 @@
         </div>
         <!-- main -->
         <div id="main" class="h-screen flex flex-col justify-center items-center text-center">
-            <h1>Hey, My name is Mohanavenkatesh</h1>
-            <p>
-                A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to
-                the
-                success of the overall product.
+            <h1>Hey, My name is <br>
+
+                <p class="text-4xl md:text-6xl pb-5 text-green-500">Mohanavenkatesh</p>
+            </h1>
+            <p class="pb-5">
+                A Frontend focused Web Developer building the Frontend of Websites and Web Applications that <br> leads
+                to the success of the overall product.
             </p>
-            <button>Download CV</button>
+            <button
+                class="sound-btn bg-green-500 px-8 rounded text-white py-2 hover:bg-green-100 border hover:border-green-500 hover:text-black"
+                data-sound="https://www.fesliyanstudios.com/play-mp3/387">Download CV</button>
         </div>
         <!-- About Me -->
         <div id="aboutme" class="h-screen flex flex-col  justify-center items-center">
@@ -56,7 +69,8 @@
                         I've done remote projects for agencies, consulted for startups, and collaborated with talented
                         people to create digital products for both business and consumer use.
 
-                        I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps
+                        I'm a bit of a digital product junky. Over the years, I've used hundgreens of web and mobile
+                        apps
                         in different industries and verticals. Feel free to contact me here.</p>
                     <button>Hire Me</button>
                 </div>
@@ -165,6 +179,29 @@
         </div>
     </div>
 
+
+
+    <script>
+
+        // Preload audio for smooth playback
+        const audioMap = {};
+
+        document.querySelectorAll('.sound-btn').forEach(button => {
+            const soundUrl = button.dataset.sound;
+            audioMap[soundUrl] = new Audio(soundUrl);
+
+            // Play sound on hover only, not click
+            button.addEventListener('mouseenter', () => {
+                const audio = audioMap[soundUrl];
+                audio.currentTime = 0;
+                audio.play();
+            });
+
+            // Prevent sound on focus or click
+            button.addEventListener('focus', (e) => e.preventDefault());
+            button.addEventListener('click', (e) => e.preventDefault());
+        });
+    </script>
 </body>
 
 </html>
