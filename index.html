@@ -5,136 +5,263 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <!--  Font Awsome Link -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
+    <style>
+        /* React */
+
+        .react_animation {
+
+            animation: react_animatin-spin infinite 20s linear;
+        }
+
+
+        @keyframes react_animatin-spin {
+            from {
+                transform: rotate(300deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Mongo DB */
+
+
+        .mongodb-logo {
+
+            animation: sway 1s ease-in-out infinite;
+
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+
+            }
+        }
+
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+
+            }
+        }
+
+
+        /* Express */
+
+        .express-logo {
+
+            filter: drop-shadow(0 0 10px transparent);
+
+            animation: glow 3s ease-in-out infinite;
+
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 10px transparent);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px #000000);
+
+            }
+        }
+
+
+        /* Node js */
+
+        .nodejs-logo {
+
+            animation: pulse 2s ease-in-out infinite, scale 3s ease-in-out infinite;
+
+
+        }
+
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+
+            }
+        }
+    </style>
+
     <div class="container mx-auto p-4 list-none ">
 
         <!-- nav -->
-        <div class="flex justify-between px-6 py-3 bg-black text-white sticky top-5  z-50">
+        <div  class="flex justify-between px-6 py-3 sticky top-5   z-50">
 
-            <a href="">Mohanavenkatesh</a>
+            <a href="#main">Mohanavenkatesh</a>
 
 
             <div class="flex gap-5">
 
-                <a href="#main">Home</a>
                 <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="" class="hover:underline">Resume</a>
 
             </div>
 
         </div>
         <!-- main -->
-        <div id="main" class="h-screen flex items-center justify-center ">
+        <div id="main" class="h-screen flex items-center justify-center bg-rose-100 md:bg-blue-100 md:rounded-2xl">
 
 
+            <div class="flex  flex-col text-center items-center justify-center">
 
-
-            <div class="flex flex-col md:flex-row justify-between p-5 w-full">
-
-                <div class="w-1/2">
-
-                    <div class="flex flex-col text-center items-center justify-center">
-
-                        <h1 class="text-5xl mb-10">Mohanavenkatesh</h1>
-
-                      <a href="" class="bg-black py-1 px-10 text-white ">Download</a>
-
-                    </div>
-
+                <div class="p-2">
+                    <h1 class="text-4xl md:text-5xl mb-2">Mohana Venkatesh</h1>
+                    <h1 class="p-3 ">MERN Stack Developer</h1>
                 </div>
 
-                <div class="w-1/2 ">
-
-                    <div class="flex flex-col md:flex-row gap-5 justify-center">
-
-                        <img class="react_animation" src="./assets/imgs/React.png" alt="react img" width="60px">
-                        <img class="express-logo " src="./assets/imgs/Expressjs.png" alt="react img" width="60px">
-                        <img class="mongodb-logo" src="./assets/imgs/MongoDB-Logo.png" alt="react img" width="60px">
-                        <img class="nodejs-logo" src="./assets/imgs/Node.js.png" alt="react img" width="60px">
 
 
-
-
-                    </div>
-
-
+                <div class="flex gap-5 flex-row p-3  mb-2">
+                    <img class="react_animation" src="./assets/imgs/React.png" alt="react img" width="40px">
+                    <img class="express-logo " src="./assets/imgs/Expressjs.png" alt="react img" width="40px">
+                    <img class="mongodb-logo" src="./assets/imgs/MongoDB-Logo.png" alt="react img" width="40px">
+                    <img class="nodejs-logo" src="./assets/imgs/Node.js.png" alt="react img" width="40px">
                 </div>
+
+
+                <!-- <div class="p-3">
+                    
+                </div> -->
 
 
             </div>
-
-
-
-
-
 
 
         </div>
         <!-- Projects -->
-        <div id="projects" class="h-screen ">
-
-            <div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-16 md:p-24">
+        <div id="projects" class="">
 
 
 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-6 md:p-24">
 
-                    <div class="p-5 ">
-                        <h1>Project 1</h1>
-                        <img src="./assets/imgs/p-1.jpg" alt="project 1 img">
-                        <p class="pb-2">This single page Medical Landing Website </p>
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-1.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
 
-                        <p class="py-2">Technologies: HTML5 , CSS3</p>
-                        <button class="bg-black text-white p-2 w-full"><a
-                                href="https://mohanavenkatesh.github.io/First-Project/"
-                                target="_blank">View</a></button>
-                    </div>
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500  md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
+                </div>
 
-                    <div class="p-5 ">
-                        <h1>Project 1</h1>
-                        <img src="./assets/imgs/p-2.jpg" alt="project 1 img">
-                        <p class="pb-2">This single page Medical Landing Website </p>
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-2.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
 
-                        <p class="py-2">Technologies: HTML5 , CSS3</p>
-                        <button class="bg-black text-white p-2 w-full"><a
-                                href="https://mohanavenkatesh.github.io/First-Project/"
-                                target="_blank">View</a></button>
-                    </div>
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500 md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
+                </div>
 
-                    <div class="p-5 ">
-                        <h1>Project 1</h1>
-                        <img src="./assets/imgs/p-3.jpg" alt="project 1 img">
-                        <p class="pb-2">This single page Medical Landing Website </p>
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-3.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
 
-                        <p class="py-2">Technologies: HTML5 , CSS3</p>
-                        <button class="bg-black text-white p-2 w-full"><a
-                                href="https://mohanavenkatesh.github.io/First-Project/"
-                                target="_blank">View</a></button>
-                    </div>
-
-
-
-
-
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500  md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
                 </div>
 
             </div>
 
-        </div>
-        <!-- Skills -->
-        <div class="h-screen ">
-            <h1></h1>
-        </div>
-        <!-- Footer -->
-        <footer id="contact" class="bg-black text-white p-2">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-6 md:p-24">
 
-            <div class="flex justify-center items-center flex-col">
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-1.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
+
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500 md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
+                </div>
+
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-2.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
+
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500 md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
+                </div>
+
+                <div class="p-5 ">
+                    <h1>Project 1</h1>
+                    <img src="./assets/imgs/p-3.jpg" alt="project 1 img">
+                    <p class="pb-2">This single page Medical Landing Website </p>
+
+                    <p class="py-2">Technologies: HTML5 , CSS3</p>
+                    <button class="bg-rose-500 md:bg-blue-500 md:rounded-xl text-white p-2 w-full"><a
+                            href="https://mohanavenkatesh.github.io/First-Project/" target="_blank">View</a></button>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-rose-100 md:bg-blue-100 md:rounded-2xl p-2 ">
+
+            <div class="flex justify-center items-center  flex-col">
                 <div class="md:w-1/2 w-full">
 
                     <div class="flex flex-col md:flex-row justify-between p-5">
@@ -161,10 +288,17 @@
                         <h1>© Copyright 2024. Made by Mohan</h1>
                     </div>
                 </div>
-            </div>
 
+                
+            </div>
+            
         </footer>
 
+        <!-- Fab icon  -->
+        <div class="fixed bottom-0 right-0 p-8">
+            <a href="#main" class="hidden md:flex"><i class="fa-solid fa-chevron-up text-xl text-blue-500 "></i></a>
+            <a href="#main" class="md:hidden"><i class="fa-solid fa-arrow-up text-3xl md:text-blue-500 text-rose-500"></i></a>
+        </div>
     </div>
 
 
