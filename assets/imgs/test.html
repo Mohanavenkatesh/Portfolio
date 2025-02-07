@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Carousel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Auto slide effect */
+        @keyframes slide {
+            0%, 33.33% { transform: translateX(0%); }
+            33.34%, 66.66% { transform: translateX(-100%); }
+            66.67%, 100% { transform: translateX(-200%); }
+        }
+
+        .slides {
+            animation: slide 9s infinite;
+        }
+
+        /* Manual navigation stops auto sliding */
+        #slide1:checked ~ .slides {
+            animation: none;
+            transform: translateX(0%);
+        }
+
+        #slide2:checked ~ .slides {
+            animation: none;
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked ~ .slides {
+            animation: none;
+            transform: translateX(-200%);
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+
+    <div class="relative w-[600px] h-[300px] overflow-hidden rounded-lg shadow-lg">
+        <!-- Radio buttons for manual navigation -->
+        <input type="radio" name="slider" id="slide1" class="hidden" checked>
+        <input type="radio" name="slider" id="slide2" class="hidden">
+        <input type="radio" name="slider" id="slide3" class="hidden">
+
+        <!-- Slides -->
+        <div class="flex w-[300%] transition-transform duration-500 slides">
+            <div class="w-[100%] flex-shrink-0">
+                <img src="https://via.placeholder.com/600x300/3498db/ffffff?text=Slide+1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[100%] flex-shrink-0">
+                <img src="https://via.placeholder.com/600x300/2ecc71/ffffff?text=Slide+2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[100%] flex-shrink-0">
+                <img src="https://via.placeholder.com/600x300/e74c3c/ffffff?text=Slide+3" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <label for="slide1" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-500 transition"></label>
+            <label for="slide2" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-500 transition"></label>
+            <label for="slide3" class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-500 transition"></label>
+        </div>
+    </div>
+
+</body>
+</html>
