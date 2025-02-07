@@ -1,0 +1,73 @@
+.herosec {
+    background-image: url(.//img/men_hero.png);
+
+    height: 100vh;
+
+    background-size: cover;
+}
+
+
+.nav_styling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.bg-clean{
+    background-color: transparent;
+}
+
+
+
+/* Default Light Theme */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.for_text{
+    color: #000000;
+}
+
+.navbar, .card {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.li_color{
+    color: #000000;
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .for_text{
+    color: #fff;
+}
+
+.dark-theme .navbar, 
+.dark-theme .card {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-theme .btn-outline-dark {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-theme .btn-outline-dark:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-theme .li_color{
+    color: #fff;
+}
