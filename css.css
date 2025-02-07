@@ -182,3 +182,69 @@ p {
 }
 
 /*-------------------------------------- Animations --------------------------------------*/
+
+/* Projects */
+/* .project_card_animation:hover{
+
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+
+
+} */
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.project_card_animation {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.skills_animation {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero_animation {
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+
+
+
+
+
