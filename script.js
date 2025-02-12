@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 50) {
 
-            navbar.classList.add("bg-white");
+            navbar.classList.add("bg-white ");
 
         } else {
 
-            navbar.classList.remove("bg-white");
+            navbar.classList.remove("bg-white ");
 
         }
     });

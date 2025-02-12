@@ -1,10 +1,9 @@
-.herosec {
-    background-image: url(.//img/men_hero.png);
+/* .herosec {
+    background-image: url(./assets/img/gradient-7258997_1920.png);
 
     height: 100vh;
-
     background-size: cover;
-}
+} */
 
 
 .nav_styling {
@@ -13,13 +12,52 @@
     left: 0;
     width: 100%;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;
+    z-index: 1;
     background-color: transparent;
 }
 
-.bg-clean{
-    background-color: transparent;
+
+/*++++++++++++++++ Button Style +++++++++++++ */
+
+
+
+.glossy-btn {
+    position: relative;
+    background: black;
+    color: white;
+    padding: 8px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+/* Gloss Effect – Hidden Until Hover */
+.glossy-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;  /* Starts fully outside the button */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-30deg);
+    transition: left 0.5s ease-in-out;
+    opacity: 0; /* Makes sure no white shade is visible by default */
+}
+
+/* Hover Effect */
+.glossy-btn:hover::before {
+    left: 100%;  /* Moves fully to the right */
+    opacity: 1;  /* White shine appears only on hover */
+}
+
+
+/* --------------Button Style --------------- */
+
 
 
 
@@ -29,16 +67,17 @@ body {
     color: #000000;
 }
 
-.for_text{
+.for_text {
     color: #000000;
 }
 
-.navbar, .card {
+.navbar,
+.card {
     background-color: #f8f9fa;
     color: #000;
 }
 
-.li_color{
+.li_color {
     color: #000000;
 }
 
@@ -48,11 +87,11 @@ body {
     color: #ffffff;
 }
 
-.dark-theme .for_text{
+.dark-theme .for_text {
     color: #fff;
 }
 
-.dark-theme .navbar, 
+.dark-theme .navbar,
 .dark-theme .card {
     background-color: #222;
     color: #fff;
@@ -68,7 +107,7 @@ body {
     color: #000;
 }
 
-.dark-theme .li_color{
+.dark-theme .li_color {
     color: #fff;
 }
 
@@ -196,9 +235,11 @@ p {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -213,9 +254,11 @@ p {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -230,9 +273,11 @@ p {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -241,7 +286,6 @@ p {
 .hero_animation {
     animation: floating 3s ease-in-out infinite;
 }
-
 
 
 

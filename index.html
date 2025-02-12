@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">E
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohanavenkatesh</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./css.css">
@@ -16,58 +16,68 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<!-- navigation bar & hero section -->
-<div id="navbar" class="nav_styling">
-    <nav class="navbar navbar-expand-lg py-3    " aria-label="Thirteenth navbar example">
-        <div class="container-fluid ">
+<!-- Navigation Bar -->
+<div id="scroll_script" class="nav_styling">
+    <nav class="navbar  navbar-expand-lg py-3">
+        
+        <div class="container-fluid">
 
-            <a href="./index.html" class="li_color text-decoration-none">Mohan</a>
+            <!-- Logo -->
+            <a href="./index.html" class="text-decoration-none for_text fw-bold fs-4">Mohan</a>
 
-            <button class="navbar-toggler border-white " type="button" data-bs-toggle="collapse"
-                data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11"
-                aria-expanded="true" aria-label="Toggle navigation">
-                <span class=" li_color"><i class="fa-solid fa-bars"></i></span>
+            <!-- Navbar Toggle Button -->
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse d-lg-flex li_color" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0" href="#">
-                    <a href="./index.html"><img class="d-none" src="./assets/img/logo.png" alt=""></a>
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+                <a href="./index.html" class="navbar-brand col-lg-3 me-0">
+                    <img class="d-none" src="./assets/img/logo.png" alt="Brand Logo">
                 </a>
-                <ul class="navbar-nav col-lg-6 align-items-center justify-content-lg-center">
-                    <li class="">
-                    <li><a href="" class="text-decoration-none px-2 li_color">Home</a></li>
-                    </li>
-                    <li class="">
-                    <li><a href="#Skills" class="text-decoration-none px-2 li_color">Skills</a></li>
-                    </li>
-                    <li class="">
 
-                    <li><a href="#Project" class="text-decoration-none px-2 li_color">Projects</a></li>
+                <!-- Navigation Links -->
+                <ul class="navbar-nav col-lg-6 align-items-center justify-content-lg-center gap-3">
+                    <li class="nav-item">
+                        <a href="#home" class="text-decoration-none for_text ">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a href="#Skills" class="text-decoration-none for_text ">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Project" class="text-decoration-none for_text ">Project</a>
+                    </li>
                 </ul>
-                <div class="d-flex  justify-content-center justify-content-md-end gap-2 col-lg-3 p-3 p-md-0">
-                    <!-- <a href="./signup.html"><button type="button" class="btn btn-dark">Theme</button></a> -->
-                    <button type="button" class="btn btn-outline-dark" id="themeToggle">Theme</button>
+
+                <!-- Theme Toggle Button -->
+                <div class="d-flex justify-content-center justify-content-md-end gap-2 col-lg-3 p-3 p-md-0">
+                    <button type="button" id="themeToggle" class="glossy-btn">Theme</button>
                 </div>
             </div>
         </div>
     </nav>
 </div>
-<!-- Hero -->
-<div class="px-4 py-5  text-center vh-100 d-flex flex-column align-items-center justify-content-center">
 
-    <h1 class="display-5 fw-bold glow-text hero_animation">MOHANAVENKATESH</h1>
+<!-- Hero Section -->
+<div id="home" class="container-fluid px-4 py-5 herosec text-center vh-100 d-flex flex-column align-items-center justify-content-center">
+
+    <h1 class="display-4 fw-bold glow-text hero_animation">MOHANAVENKATESH</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4 hero_animation">MERN Stact Developer</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="./assets/pdf/Mohanavenkatesh - Resume.pdf" download="Mohan Resume"><button type="button"
-                    class="btn btn-dark scale-in px-4 gap-3 hero_animation">Download CV</button></a>
-            <a href="https://www.linkedin.com/in/mohanavenkatesh-a-3574382ab/" target="_blank"><button type="button"
-                    class="btn btn-outline-secondary scale-in px-4 hero_animation">LinkedIn</button></a>
+        <p class="lead mb-4 hero_animation">MERN Stack Developer</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="./assets/pdf/Mohanavenkatesh - Resume.pdf" download="Mohan Resume">
+                <button type="button" class="glossy-btn scale-in px-4 hero_animation">Download CV</button>
+            </a>
+            <a href="https://www.linkedin.com/in/mohanavenkatesh-a-3574382ab/" target="_blank">
+                <button type="button" class="glossy-btn scale-in px-4 hero_animation">LinkedIn</button>
+            </a>
         </div>
     </div>
 </div>
+
+
 <!-- Skills -->
 <div class="container px-4 py-5" id="Skills">
     <h2 class="pb-2 border-bottom">Skills</h2>
@@ -93,7 +103,7 @@
             </div>
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">CSS</h3>
-                
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -103,7 +113,7 @@
             </div>
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">JavaScript</h3>
-                
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -114,7 +124,7 @@
 
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">Bootstrap</h3>
-               
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -125,7 +135,7 @@
 
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">Tailwind CSS </h3>
-                
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -135,7 +145,7 @@
             </div>
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">MongoDB</h3>
-               
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -146,7 +156,7 @@
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">Express.js
                 </h3>
-                
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -157,7 +167,7 @@
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">React.js
                 </h3>
-                
+
             </div>
         </div>
         <div class="col skills_animation d-flex align-items-center">
@@ -168,7 +178,7 @@
             <div class="px-3">
                 <h3 class="fw-bold mb-0 fs-4 ">Node.js
                 </h3>
-               
+
             </div>
         </div>
     </div>
@@ -183,9 +193,10 @@
 
             </p>
             <p>
-                <a href="https://github.com/Mohanavenkatesh" target="_blank" class="btn btn-dark my-2">GitHub</a>
-                <a href="https://app.netlify.com/teams/mohanavenkatesh-a/sites?creator=me" target="_blank"
-                    class="btn btn-secondary my-2">Netlify</a>
+                <button class="glossy-btn"><a href="https://github.com/Mohanavenkatesh" target="_blank"
+                        class="text-decoration-none my-2 text-white">GitHub</a></button>
+                <button class="glossy-btn"><a href="https://app.netlify.com/teams/mohanavenkatesh-a/sites?creator=me"
+                        target="_blank" class="text-decoration-none my-2 text-white">Netlify</a></button>
             </p>
         </div>
     </div>
@@ -200,13 +211,14 @@
                     <div class="card-body">
                         <p class="card-text">Medical Landing Website using HTML & CSS.
                         </p>
-                        <div class="d-flex justify-content-between align-items-center" >
-                            <div class="btn-group">
-                                <a href="https://mohanavenkatesh.github.io/Medical-Treatment/" target="_blank"><button
-                                        type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                            </div>
-                           
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <a href="https://mohanavenkatesh.github.io/Medical-Treatment/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View </a>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -219,12 +231,11 @@
 
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="https://mohanavenkatesh.github.io/Second-Project/" target="_blank"><button
-                                        type="button" class="btn btn-sm btn-outline-secondary "
-                                        width="100%">View</button></a>
-                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                            </div>
+
+                            <a href="https://mohanavenkatesh.github.io/Second-Project/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View </a>
+
 
                         </div>
                     </div>
@@ -238,13 +249,12 @@
 
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="https://mohanavenkatesh.github.io/Third-Project/" target="_blank"><button
-                                        type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                            </div>
-                            <small class="text-body-secondary">HTML & CSS & Bootstrap
-                            </small>
+
+                            <a href="https://mohanavenkatesh.github.io/Third-Project/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View </a>
+
+
                         </div>
                     </div>
                 </div>
@@ -253,17 +263,17 @@
                 <div class="card shadow-sm">
                     <img src="./assets/img/Project4.png" alt="">
                     <div class="card-body">
-                        <p class="card-text">Toothpaste selling site using  Bootstrap and JavaScript.
+                        <p class="card-text">Toothpaste selling site using Bootstrap and JavaScript.
 
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="https://mohanavenkatesh.github.io/Bite/" target="_blank"><button type="button"
-                                        class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                            </div>
-                            <small class="text-body-secondary">HTML & CSS & Bootstrap
-                            </small>
+
+                            <a href="https://mohanavenkatesh.github.io/Bite/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View </a>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -275,14 +285,14 @@
                         <p class="card-text">This single page API fetching site only using Bootstrap & JavaScript
 
                         </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="https://mohanavenkatesh.github.io/Project-5/"> <button type="button"
-                                        class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                            </div>
-                            <small class="text-body-secondary">HTML & CSS & Bootstrap & JavaScript
-                            </small>
+                        <div class="d-flex justify-content-between align-items-center ">
+
+
+                            <a href="https://mohanavenkatesh.github.io/Project-5/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View </a>
+
+
                         </div>
                     </div>
                 </div>
@@ -356,7 +366,7 @@
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                         <label for="newsletter1" class="visually-hidden">Email address</label>
                         <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                        <button class="btn btn-dark" type="button">Subscribe</button>
+                        <button class="glossy-btn" type="button">Subscribe</button>
                     </div>
                 </form>
             </div>
