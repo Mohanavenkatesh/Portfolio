@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const navbar = document.getElementById("navbar");
@@ -39,4 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("theme", "light");
         }
     });
+});
+
+//------------------- fab button -------------------
+
+window.addEventListener("scroll", function () {
+    var whatsappButton = document.getElementById("whatsapp-button");
+    if (window.scrollY > 100) {  // Show when scrolled 100px
+        whatsappButton.classList.add("show");
+    } else {
+        whatsappButton.classList.remove("show");
+    }
 });
