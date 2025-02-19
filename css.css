@@ -321,3 +321,161 @@ p {
     visibility: visible;
     z-index: 1;
 }
+
+
+
+
+/* Add animation to the navigation bar */
+.nav_styling {
+    animation: slideInDown 1s ease-in-out;
+}
+
+/* Add animation to the hero section */
+.herosec {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Keyframes for slideInDown animation */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Add animation to the navigation bar */
+.nav_styling {
+    animation: slideInDown 1s ease-in-out;
+}
+
+/* Keyframes for slideInDown animation */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add hover effect to navbar links */
+.navbar-nav .nav-item .for_text {
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .for_text:hover {
+    color: #ff6347; /* Change to your preferred hover color */
+}
+
+
+
+<section id="Project" class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Projects</h1>
+            <p class="lead">Here you will find some of the personal projects that I created with each project
+                containing its own case study.
+            </p>
+            <p>
+                <a href="https://github.com/Mohanavenkatesh" target="_blank"
+                    class="text-decoration-none my-2 text-white glossy-btn">GitHub</a>
+                <a href="https://app.netlify.com/teams/mohanavenkatesh-a/sites?creator=me" target="_blank"
+                    class="text-decoration-none my-2 text-white glossy-btn">Netlify</a>
+            </p>
+        </div>
+    </div>
+</section>
+<div class="album py-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="col project_card_animation">
+                <div class="card shadow-sm">
+                    <img src="./assets/img/Project1.png" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Medical Landing Website using HTML & CSS.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://mohanavenkatesh.github.io/Medical-Treatment/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col project_card_animation">
+                <div class="card shadow-sm">
+                    <img src="./assets/img/Project2.png" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Spotify premium clone website using HTML & CSS.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://mohanavenkatesh.github.io/Second-Project/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col project_card_animation">
+                <div class="card shadow-sm">
+                    <img src="./assets/img/Project3.png" alt="">
+                    <div class="card-body">
+                        <p class="card-text">This is single page plant selling website using HTML & CSS.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://mohanavenkatesh.github.io/Third-Project/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col project_card_animation">
+                <div class="card shadow-sm">
+                    <img src="./assets/img/Project4.png" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Toothpaste selling site using Bootstrap and JavaScript.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://mohanavenkatesh.github.io/Bite/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col project_card_animation">
+                <div class="card shadow-sm">
+                    <img src="./assets/img/Project5.png" alt="">
+                    <div class="card-body">
+                        <p class="card-text">This single page API fetching site only using Bootstrap & JavaScript.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://mohanavenkatesh.github.io/Project-5/"
+                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
