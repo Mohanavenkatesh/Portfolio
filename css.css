@@ -1,7 +1,7 @@
 .font-family {
     font-family: 'Josefin Sans', sans-serif;
-  }
-  
+}
+
 
 .nav_styling {
     position: fixed;
@@ -30,7 +30,7 @@
     cursor: pointer;
     overflow: hidden;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    
+
 }
 
 /* Gloss Effect – Hidden Until Hover */
@@ -67,7 +67,7 @@
 body {
     background-color: #ffffff;
     color: #000000;
-    
+
 }
 
 .for_text {
@@ -316,9 +316,6 @@ p {
     z-index: 1;
 }
 
-
-
-
 /* Add animation to the navigation bar */
 .nav_styling {
     animation: slideInDown 1s ease-in-out;
@@ -335,6 +332,7 @@ p {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -346,12 +344,11 @@ p {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
-
-
 
 /* Add animation to the navigation bar */
 .nav_styling {
@@ -364,6 +361,7 @@ p {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -374,7 +372,3 @@ p {
 .navbar-nav .nav-item .for_text {
     transition: color 0.3s ease-in-out;
 }
-
-
-
-
