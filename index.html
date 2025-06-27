@@ -1,434 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohanavenkatesh</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css.css">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- font awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Mohanavenkatesh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark: #0f172a;
+            --accent: #4f46e5;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+        }
 
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+        .dark-theme {
+            --primary: #3b82f6;
+            --secondary: #e2e8f0;
+            --light: #0f172a;
+            --gray: #94a3b8;
+            --dark: #f8fafc;
+            --accent: #6366f1;
+            --card-bg: #1e293b;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Skills Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            color: var(--light);
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--gray);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Mohan</a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle">Dark Mode</button>
+            </nav>
+        </div>
+    </header>
 
-<!-- Navigation Bar -->
-<div id="scroll_script" class="nav_styling">
-    <nav class="navbar navbar-expand-lg py-3 border-bottom">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a href="./index.html" class="text-decoration-none for_text fs-4">Mohan</a>
-            <!-- Navbar Toggle Button -->
-            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="for_text"><i class="fa-solid fa-bars-progress"></i></span>
-            </button>
-            <!-- Navbar Content -->
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                <a href="./index.html" class="navbar-brand col-lg-3 me-0">
-                    <img class="d-none" src="./assets/img/logo.png" alt="Brand Logo">
-                </a>
-                <!-- Navigation Links -->
-                <ul class="navbar-nav col-lg-6 align-items-center justify-content-lg-center gap-3">
-                    <li class="nav-item">
-                        <a href="#home" class="text-decoration-none for_text">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#Skills" class="text-decoration-none for_text">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#Project" class="text-decoration-none for_text">Project</a>
-                    </li>
-                </ul>
-                <!-- Theme Toggle Button -->
-                <div class="d-flex justify-content-center justify-content-md-end gap-2 col-lg-3 p-3 p-md-0">
-                    <button type="button" id="themeToggle" class="glossy-btn">Theme</button>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mohanavenkatesh</h1>
+                <p>Web Developer</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mohanavenkatesh-a-3574382ab/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Mohanavenkatesh" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <a href="#" class="btn">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML5</h3>
+                    <p>Semantic markup and modern structure</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <h3>CSS3</h3>
+                    <p>Responsive design and styling</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web experiences</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+                    <h3>Bootstrap</h3>
+                    <p>Responsive framework</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>React.js</h3>
+                    <p>Frontend library</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <h3>Node.js</h3>
+                    <p>Server-side JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>MongoDB</h3>
+                    <p>NoSQL database</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
+                    <h3>WordPress</h3>
+                    <p>Content management</p>
                 </div>
             </div>
         </div>
-    </nav>
-</div>
+    </section>
 
-
-<!-- Hero Section -->
-<div id="home"
-    class="container-fluid font-family px-4 py-5 herosec text-center vh-100 d-flex flex-column align-items-center justify-content-center">
-
-    <h1 class="display-4 fw-bold glow-text hero_animation">MOHANAVENKATESH</h1>
-    <div class="col-lg-6 mx-auto">
-        <p class="lead  hero_animation">Web Developer</p>
-
-
-        <div class="pb-3">
-
-            <a class="text-decoration-none me-2" href="https://www.linkedin.com/in/mohanavenkatesh-a-3574382ab/"
-                target="_blank">
-
-                <i class="fa-brands fa-linkedin hero_animation for_text fs-3"></i>
-            </a>
-            <a class="text-decoration-none" href="https://github.com/Mohanavenkatesh" target="_blank">
-
-                <i class="fa-brands fa-github hero_animation for_text fs-3"></i>
-            </a>
-
-        </div>
-
-
-        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-
-            <a href="./assets/pdf/Mohan.pdf" download="Mohan Resume">
-                <button type="button" class="glossy-btn scale-in px-4 hero_animation">Download CV <i
-                        class="fa-solid fa-download"></i></button>
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- Skills -->
-<div class="container px-4 py-5 font-family" id="Skills">
-    <h2 class="pb-2 border-bottom">Skills</h2>
-
-    <div class="d-flex row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-
-        <div class="col skills_animation d-flex  align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/HTML5.png" alt="" width="50px">
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Some of my recent work</p>
             </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">HTML</h3>
-                <p>
-
-                </p>
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/CSS3.png" alt="" width="50px">
-            </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">CSS</h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/JavaScript.png" alt="" width="50px">
-            </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">JavaScript</h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-                <img src="./assets/img/Bootstrap.png" alt="" width="50px">
-
-            </div>
-
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">Bootstrap</h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/Tailwind CSS.png" alt="" width="50px">
-            </div>
-
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">Tailwind CSS </h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/MongoDB.png" alt="" width="50px">
-            </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">MongoDB</h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src="./assets/img/Express.png" alt="" width="50px">
-            </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">Express.js
-                </h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-
-                <img src=".//assets/img/React.png" alt="" width="50px">
-            </div>
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">React.js
-                </h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-                <img src="./assets/img/Node.js.png" alt="" width="50px">
-            </div>
-
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">Node.js
-                </h3>
-
-            </div>
-        </div>
-        <div class="col skills_animation d-flex align-items-center">
-            <div class="p-1">
-                <img src="./assets/img/WordPress.png" alt="" width="50px">
-            </div>
-
-            <div class="px-3">
-                <h3 class="fw-bold mb-0 fs-4 ">WordPress
-                </h3>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Project -->
-<section id="Project" class="py-5 text-center container font-family">
-    <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Projects</h1>
-            <p class="lead">Here you will find some of the personal projects that I created with each project
-                containing its own case study.
-            </p>
-            <p>
-                <a href="https://github.com/Mohanavenkatesh" target="_blank"
-                    class="text-decoration-none my-2 text-white glossy-btn">GitHub</a>
-                <a href="https://app.netlify.com/teams/mohanavenkatesh-a/sites?creator=me" target="_blank"
-                    class="text-decoration-none my-2 text-white glossy-btn">Netlify</a>
-            </p>
-        </div>
-    </div>
-</section>
-
-
-<div class="album py-5 font-family">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project1.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text">Medical Landing Website using HTML & CSS.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://mohanavenkatesh.github.io/Medical-Treatment/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">Medical Website</div>
+                    <div class="project-content">
+                        <h3>Medical Treatment Site</h3>
+                        <p>Landing page for medical services using HTML & CSS</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Spotify Clone</div>
+                    <div class="project-content">
+                        <h3>Spotify Premium</h3>
+                        <p>Clone of Spotify premium website using HTML & CSS</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Plant Store</div>
+                    <div class="project-content">
+                        <h3>Plant Selling Site</h3>
+                        <p>E-commerce website for plants using HTML & CSS</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Toothpaste Shop</div>
+                    <div class="project-content">
+                        <h3>Bite Toothpaste</h3>
+                        <p>Toothpaste selling site using Bootstrap & JavaScript</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">API Dashboard</div>
+                    <div class="project-content">
+                        <h3>API Fetching Site</h3>
+                        <p>Data fetching site using Bootstrap & JavaScript</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Attendance App</div>
+                    <div class="project-content">
+                        <h3>Attendance Management</h3>
+                        <p>Full-stack attendance app using React & Bootstrap</p>
+                        <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
             </div>
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project2.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text">Spotify premium clone website using HTML & CSS.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://mohanavenkatesh.github.io/Second-Project/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project3.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text">This is plant selling website using HTML & CSS.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://mohanavenkatesh.github.io/Third-Project/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project4.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text">Toothpaste selling site using Bootstrap and JavaScript.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://mohanavenkatesh.github.io/Bite/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project5.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text">API fetching site only using Bootstrap & JavaScript.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://mohanavenkatesh.github.io/Project-5/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col project_card_animation">
-                <div class="card shadow-sm">
-                    <img src="./assets/img/Project6.png" alt="">
-                    <div class="card-body">
-                        <p class="card-text"> Attendance-app using React & Bootstrap. (Full Stack)</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a href="https://github.com/Mohanavenkatesh/attendance-app/"
-                                class="text-decoration-none text-white w-100 glossy-btn text-center" target="_blank">
-                                View
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-    </div>
-</div>
+    </section>
 
-
-<!-- Footer -->
-<div class="container font-family">
-    <footer class="py-5">
-        <div class="row">
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Projects</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://mohanavenkatesh.github.io/Medical-Treatment/"
-                            target="_blank" class=" p-0 for_text text-decoration-none">Medical-Treatment</a></li>
-                    <li class="nav-item mb-2"><a href="https://mohanavenkatesh.github.io/Second-Project/"
-                            target="_blank" class=" p-0 for_text text-decoration-none">Spotify Premium Site</a></li>
-                    <li class="nav-item mb-2"><a href="https://mohanavenkatesh.github.io/Third-Project/" target="_blank"
-                            class=" p-0 for_text text-decoration-none">Plant Selling Site.
-                        </a></li>
-                    <li class="nav-item mb-2"><a href="https://mohanavenkatesh.github.io/Bite/" target="_blank"
-                            class=" p-0 for_text text-decoration-none">Toothpaste Site.
-                        </a></li>
-                    <li class="nav-item mb-2"><a href="https://mohanavenkatesh.github.io/Project-5/" target="_blank"
-                            class=" p-0 for_text text-decoration-none">JavaScript API </a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Others</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://www.keybr.com/profile/o2o1s03" target="_blank"
-                            class=" p-0 for_text text-decoration-none">Keybr - Typing Site
-                        </a></li>
-                    <li class="nav-item mb-2"><a
-                            href="https://www.udemy.com/certificate/UC-b05e91db-39ee-44b1-989b-9628f4975784/"
-                            target="_blank" class=" p-0 for_text text-decoration-none">Udemy - Certificate</a></li>
-                    <li class="nav-item mb-2"><a
-                            href="https://www.google.com/maps/place/Ramapuram,+St.Thomas+Mount,+Tamil+Nadu/@13.0067434,80.1827,15z/data=!3m1!4b1!4m6!3m5!1s0x3a52674fcceec217:0x6ac24b6467a5e870!8m2!3d13.0078522!4d80.1925295!16s%2Fg%2F11c1pfx9v7?authuser=0&entry=tts&g_ep=EgoyMDI1MDEyMi4wIPu8ASoASAFQAw%3D%3D"
-                            target="_blank" class=" p-0 for_text text-decoration-none">Location</a></li>
-                    <li class="nav-item mb-2"><a href="#" class=" p-0 for_text text-decoration-none">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class=" p-0 for_text text-decoration-none">About</a></li>
-                </ul>
-            </div>
-
-
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Contact</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://github.com/Mohanavenkatesh" target="_blank"
-                            class=" p-0 for_text text-decoration-none">GitHub</a></li>
-                    <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/mohanavenkatesh-a-3574382ab/"
-                            target="_blank" class=" p-0 for_text text-decoration-none">LinkedIN</a></li>
-                    <li class="nav-item mb-2"><a href="https://www.instagram.com/mohanavenkatesh.a/profilecard/"
-                            target="_blank" class=" p-0 for_text text-decoration-none">Instagram</a></li>
-                    <li class="nav-item mb-2"><a
-                            href="https://www.google.com/maps/place/Ramapuram,+St.Thomas+Mount,+Tamil+Nadu/@13.0067437,80.1929998,15z/data=!3m1!4b1!4m6!3m5!1s0x3a52674fcceec217:0x6ac24b6467a5e870!8m2!3d13.0078522!4d80.1925295!16s%2Fg%2F11c1pfx9v7?authuser=0&entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D"
-                            target="_blank" class=" p-0 for_text text-decoration-none">+91 7200470762</a></li>
-                    <li class="nav-item mb-2"><a href="" class=" p-0 for_text text-decoration-none">
-                            mohanavenkatesh.a@gmail.com
-                        </a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-5 offset-md-1 mb-3">
-                <form>
-                    <h5>Feel free to Contact</h5>
-                    <p>by submitting the form below and I will get back to you as soon as possible.
-                    </p>
-                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Your Message">
-                        <button class="glossy-btn" type="button">Send</button>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="#">Medical Treatment Site</a></li>
+                        <li><a href="#">Spotify Premium Clone</a></li>
+                        <li><a href="#">Plant Selling Site</a></li>
+                        <li><a href="#">Bite Toothpaste</a></li>
+                        <li><a href="#">API Fetching Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Netlify</a></li>
+                        <li><a href="#">Udemy Certificate</a></li>
+                        <li><a href="#">Keybr Typing</a></li>
+                        <li><a href="#">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Me</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 7200470762</li>
+                        <li><i class="fas fa-envelope"></i> mohanavenkatesh.a@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Chennai, India</li>
+                    </ul>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
-                </form>
+                </div>
+                <div class="footer-column">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </div>
-
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>© 2025 Mohanavenkatesh, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#twitter"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#instagram"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use>
-                        </svg></a></li>
-            </ul>
+            <div class="copyright">
+                <p>&copy; 2025 Mohanavenkatesh. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-</div>
 
-
-<a id="whatsapp-button" href="https://wa.me/7200470762" class="whatsapp-float text-dark bg-white" target="_blank"><i
-        class="fa-brands fa-whatsapp"></i></a>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            themeToggle.textContent = currentTheme === 'dark-theme' ? 'Light Mode' : 'Dark Mode';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                localStorage.setItem('theme', '');
+                themeToggle.textContent = 'Dark Mode';
+            } else {
+                body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+                themeToggle.textContent = 'Light Mode';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
-
-<script src="./script.js">
-
-</script>
 </body>
-
 </html>
